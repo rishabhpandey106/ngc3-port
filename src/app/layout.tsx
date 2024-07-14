@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Urbanist } from "next/font/google";
 import "./globals.css";
+import StarsCanvas from "@/components/StarBackground";
 
-const inter = Inter({ subsets: ["latin"] });
+const urbanist = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${urbanist.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}><StarsCanvas />{children}</body>
     </html>
   );
 }
