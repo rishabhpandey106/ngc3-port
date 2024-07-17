@@ -29,7 +29,7 @@ const SquaresScene = () => {
         />
         <directionalLight position={[0, 0, 4]} intensity={0.12} />
         <Squares />
-        <Environment preset="sunset" />
+        <Environment preset="night" />
         <OrbitControls />
       </Canvas>
     </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
 import StarsCanvas from "@/components/StarBackground";
+import Header from "@/components/Header";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -17,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${urbanist.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}><StarsCanvas />{children}</body>
+      <body className={`${urbanist.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}><StarsCanvas /><Header/>{children}<StarsCanvas /></body>
     </html>
   );
 }
