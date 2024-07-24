@@ -18,6 +18,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="lg:py-14"
     >
       <div className="grid gap-x-8 gap-y-6 md:grid-cols-[2fr,1fr]">
         <Heading size="xl" className="col-start-1">

@@ -40,7 +40,7 @@ const StarBackground = (props: any) => {
 };
 
 const StarsCanvas = () => (
-    <div className="w-full h-auto absolute inset-0 z-[-99]">
+    <div className="w-full h-full absolute inset-0 z-[-99] pointer-events-none">
         <Canvas camera={{position: [0, 0, 1]}}>
         <Suspense fallback={null}>
             <StarBackground />

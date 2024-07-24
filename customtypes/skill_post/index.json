@@ -1,32 +1,38 @@
 {
   "format": "page",
-  "id": "page",
-  "label": "Page",
+  "id": "skill_post",
+  "label": "Skill Post",
   "repeatable": true,
   "status": true,
   "json": {
     "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
       "uid": {
         "config": {
           "label": "UID"
         },
         "type": "UID"
       },
+      "hover_image": {
+        "type": "Image",
+        "config": {
+          "label": "Hover Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "experience": {
-              "type": "SharedSlice"
-            },
-            "content_index": {
-              "type": "SharedSlice"
-            },
-            "tech_list": {
-              "type": "SharedSlice"
-            },
-            "biography": {
+            "text_block": {
               "type": "SharedSlice"
             }
           }

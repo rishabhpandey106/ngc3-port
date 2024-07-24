@@ -3,7 +3,7 @@ import { Urbanist } from "next/font/google";
 import "./globals.css";
 import StarsCanvas from "@/components/StarBackground";
 import Header from "@/components/Header";
-
+import Footer from "@/components/Footer";
 const urbanist = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${urbanist.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}><StarsCanvas /><Header/>{children}<StarsCanvas /></body>
+      <body className={`${urbanist.className} bg-[#030014] relative min-h-screen overflow-y-scroll overflow-x-hidden`}><StarsCanvas /><Header/>{children}<Footer/></body>
     </html>
   );
 }
