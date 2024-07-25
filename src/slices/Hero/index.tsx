@@ -5,6 +5,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import SquaresScene from "@/slices/Hero/Shapes";
+import SparklesText from "@/components/magicui/sparkles-text";
 
 /**
  * Props for `Hero`.
@@ -72,6 +73,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       ref={component}
+      className="lg:py-12"
     >
       <div className="grid min-h-[70vh] grid-cols-1 items-center md:grid-cols-2">
         <SquaresScene />
@@ -89,8 +91,11 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               {renderLetters(slice.primary.last_name, "last")}
             </span>
             </h1>
-            <span className="job-title block bg-gradient-to-tr from-blue-600 via-blue-300 to-blue-600 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4xl">
-            {slice.primary.tag_line}
+            <span className="job-title relative block bg-gradient-to-tr from-blue-600 via-blue-300 to-blue-600 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4xl">
+              {slice.primary.tag_line}
+              <span className="absolute inset-0">
+                <SparklesText text="" />
+              </span>
           </span>
         </div>
       </div>
