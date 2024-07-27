@@ -3,9 +3,11 @@ import Bounded from "@/components/Bounded";
 import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
-import SquaresScene from "@/slices/Hero/Shapes";
+import { lazy, Suspense, useEffect, useRef } from "react";
+// import SquaresScene from "@/slices/Hero/Shapes";
 import SparklesText from "@/components/magicui/sparkles-text";
+
+const SquaresScene = lazy(() => import("@/slices/Hero/Shapes"));
 
 /**
  * Props for `Hero`.
@@ -76,7 +78,15 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       className="lg:py-12"
     >
       <div className="grid min-h-[70vh] grid-cols-1 items-center md:grid-cols-2">
+        <Suspense fallback={
+          <div className="row-span-1 row-start-1 -mt-9 aspect-square md:col-span-1 md:col-start-2 md:mt-0 bg-slate-500 animate-pulse">
+            <div className="h-full w-full flex items-center justify-center">
+              <div className="text-white">LOADING 3D MODEL</div>
+            </div>
+      </div>
+  }>
         <SquaresScene />
+        </Suspense>
         <div className="col-start-1 md:row-start-1 " data-speed=".2">
             <h1
               className="mb-8 text-[clamp(3rem,20vmin,20rem)] font-extrabold leading-none tracking-tighter"
@@ -94,7 +104,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             <span className="job-title relative block bg-gradient-to-tr from-blue-600 via-blue-300 to-blue-600 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4xl">
               {slice.primary.tag_line}
               <span className="absolute inset-0">
-                <SparklesText text="" />
+                <SparklesText text="GAME DEV" className="text-transparent"/>
               </span>
           </span>
         </div>
